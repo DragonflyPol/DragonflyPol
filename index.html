@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonflyPol Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">DragonflyPol</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('dragonfly')">About Dragonfly</a></li>
+                <li><a href="#" onclick="showPage('publications')">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page-section active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>DragonflyPol</h1>
+                <p class="hero-subtitle">Unveiling the <span class="highlight">Polarized Universe</span></p>
+                <p class="hero-description">
+                    Wide-field optical polarimetry survey and telescope design.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showPage('dragonfly')">Learn About Dragonfly</button>
+                    <button class="btn-secondary" onclick="showPage('publications')">View Research</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="lab-photo-container">
+                    <img src="assets/images/Lab.jpeg" alt="Polarimetry Lab" class="lab-photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <!-- <h2>Revolutionary Polarimetry</h2>
+                        <p>
+                            DragonflyPol represents a quantum leap in astronomical instrumentation. By transforming the renowned Dragonfly Telephoto Array into an unprecedented wide-field polarimeter, we're opening new windows into the polarized universe.
+                        </p> -->
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>48</h3>
+                                <p>Telephoto Lenses</p>
+                            </div>
+                            <div class="stat">
+                                <h3>6°²</h3>
+                                <p>Field of View</p>
+                            </div>
+                            <div class="stat">
+                                <h3>10×</h3>
+                                <p>Reduced Light Scattering</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/images/Lab2.jpeg" alt="Dragonfly Array" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Science Goals Section -->
+        <section class="science" id="science">
+            <div class="container">
+                <h2 class="section-title">Science Goals</h2>
+                <div class="science-grid">
+                    <div class="science-card">
+                        <div class="science-icon">🧲</div>
+                        <h3>Cosmic Magnetism</h3>
+                        <p>Mapping interstellar and cosmic magnetic fields through dust extinction polarization, providing 2D tomography of plane-of-sky fields.</p>
+                    </div>
+                    <div class="science-card">
+                        <div class="science-icon">🌌</div>
+                        <h3>3D Cloud Structure</h3>
+                        <p>Potentially revealing the three-dimensional structure of high-latitude diffuse clouds through polarimetry.</p>
+                    </div>
+                    <div class="science-card">
+                        <div class="science-icon">💫</div>
+                        <h3>Dust Properties</h3>
+                        <p>Examining dust alignment and properties in various environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="technology" id="technology">
+            <div class="container">
+                <h2 class="section-title">Technology</h2>
+                <div class="tech-features">
+                    <div class="tech-feature">
+                        <h3>Full Stokes Polarimetry</h3>
+                        <p>Simultaneous measurement of all four Stokes parameters (I, Q, U, V) in a single observation, providing complete polarization characterization.</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h3>Mosaic Array Design</h3>
+                        <p>Each of the 48 telephoto lenses generates its own image with individual polarizers, enabling unprecedented wide-field capabilities.</p>
+                    </div>
+                    <div class="tech-feature">
+                        <h3>Low Surface Brightness</h3>
+                        <p>Novel refractive optics reduce light scattering by an order of magnitude compared to conventional telescopes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <h2 class="section-title">Collaboration</h2>
+                
+                <!-- Role Legend -->
+                <div class="role-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot role-instrumentation"></div>
+                        <span class="legend-text">Instrumentation</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot role-science"></div>
+                        <span class="legend-text">Science</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot role-pipeline"></div>
+                        <span class="legend-text">Pipeline & Observing</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot role-dragonfly"></div>
+                        <span class="legend-text">Dragonfly Team</span>
+                    </div>
+                </div>
+
+                <!-- Principal Investigators -->
+                <div class="team-section">
+                    <h3>Principal Investigators</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-instrumentation"></div>
+                                <div class="role-dot role-science"></div>
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <img src="assets/images/MehrnooshTahani.jpg" alt="Mehrnoosh Tahani" class="member-photo">
+                            <h4>Mehrnoosh Tahani</h4>
+                            <p class="affiliation">Principal Investigator<br>University of South Carolina</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-instrumentation"></div>
+                            </div>
+                            <img src="assets/images/LeoHollberg.jpg" alt="Leo Hollberg" class="member-photo">
+                            <h4>Leo Hollberg</h4>
+                            <p class="affiliation">Co-Principal Investigator<br>Stanford University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dragonfly Key Members -->
+                <div class="team-section">
+                    <h3><a href="https://www.dragonflytelescope.org/" target="_blank" class="dragonfly-heading-link">Dragonfly</a> Members</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-dragonfly"></div>
+                                <div class="role-dot role-instrumentation"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Deborah Lokhorst</h4>
+                            <p class="affiliation">National Research Council Canada</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-dragonfly"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Bob Abraham</h4>
+                            <p class="affiliation">University of Toronto</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-dragonfly"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Pieter van Dokkum</h4>
+                            <p class="affiliation">Yale University</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-dragonfly"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Will Bowman</h4>
+                            <p class="affiliation">Dragonfly Project</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Students -->
+                <div class="team-section">
+                    <h3>Students</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Paras Regmi</h4>
+                            <p class="affiliation">University of South Carolina, USA</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Shimpei Nishimoto</h4>
+                            <p class="affiliation">Osaka Metropolitan University, Japan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Members -->
+                <div class="team-section">
+                    <h3>Team Members</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-science"></div>
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Yasuo Doi</h4>
+                            <p class="affiliation">University of Tokyo, Japan</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Toshikazu Onishi</h4>
+                            <p class="affiliation">Osaka Metropolitan University, Japan</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-science"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Enrique Lopez Rodriguez</h4>
+                            <p class="affiliation">SOFIA Science Center, USRA</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Koji Kawabata</h4>
+                            <p class="affiliation">Hiroshima University, Japan</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-pipeline"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Hiroshi Akitaya</h4>
+                            <p class="affiliation">Chiba Institute of Technology, Japan</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="role-indicator">
+                                <div class="role-dot role-science"></div>
+                            </div>
+                            <div class="member-photo"></div>
+                            <h4>Marijke Haverkorn</h4>
+                            <p class="affiliation">Radboud University, Netherlands</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Accomplishments Section -->
+        <section class="accomplishments" id="accomplishments">
+            <div class="container">
+                <h2 class="section-title">Project Accomplishments</h2>
+                <div class="accomplishments-grid">
+                    <div class="accomplishment-card">
+                        <div class="accomplishment-date">2024</div>
+                        <h3>Initial Lab experiments Completed</h3>
+                        <p>Successful laboratory calibrations and preliminary tests at Stanford's Hollberg Lab.</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <div class="accomplishment-date">2024-2025</div>
+                        <h3>International Collaboration Established</h3>
+                        <p>Different teams and roles are formed.</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <div class="accomplishment-date">2025</div>
+                        <h3>Calibrations</h3>
+                        <p>Calibrations in progress.</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <div class="accomplishment-date">2025</div>
+                        <h3>Observations</h3>
+                        <p>Planned for 2025.</p>
+                    </div>
+                    <div class="accomplishment-card">
+                        <div class="accomplishment-date">2025</div>
+                        <h3>Pipeline Development</h3>
+                        <p>In progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Dragonfly Page -->
+    <div id="dragonfly" class="page-section">
+        <section class="dragonfly-info">
+            <div class="container">
+                <div class="dragonfly-content">
+                    <h2 class="section-title">About the Dragonfly Telephoto Array</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #666; margin-bottom: 2rem;">
+                        The Dragonfly Telephoto Array is a novel astronomical instrument that has transformed our understanding of the low surface brightness universe. Since 2014, this innovative telescope design has pioneered new approaches to detecting faint, extended structures in space.
+                    </p>
+                    
+                    <!-- <div class="tech-features">
+                        <div class="tech-feature">
+                            <h3>Innovative Design</h3>
+                            <p>Using high-end Canon telephoto lenses in a mosaic array configuration, Dragonfly reduces optical artifacts and scattered light by an order of magnitude compared to conventional telescopes.</p>
+                        </div>
+                        <div class="tech-feature">
+                            <h3>Scientific Legacy</h3>
+                            <p>Dragonfly discovered Ultra Diffuse Galaxies, a new class of galaxies critical for testing dark matter theories, revolutionizing galaxy formation and evolution studies.</p>
+                        </div>
+                        <div class="tech-feature">
+                            <h3>Technical Specifications</h3>
+                            <p>Equivalent to 1-meter aperture, f/0.4 focal ratio, 6 square degree field of view. Currently completing SDSS footprint survey by May 2025.</p>
+                        </div>
+                    </div> -->
+                    
+                    <a href="https://www.dragonflytelescope.org/" target="_blank" class="dragonfly-link">
+                        Visit Dragonfly Project Website
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2>DragonflyPol Innovation</h2>
+                        <p>
+                            Building on Dragonfly's proven success, DragonflyPol represents the next evolutionary step. By adding polarimetry capabilities to each of the 48 lenses, we're creating an unprecedented wide-field optical polarimeter.
+                        </p>
+                        <p>
+                            This transformation allows simultaneous measurement of all four Stokes parameters (I, Q, U, V), opening new windows into cosmic magnetism, dust properties, and fundamental physics.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/images/dragonflypol-config.jpg" alt="DragonflyPol Configuration" />
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
+
+    <!-- Publications Page -->
+    <div id="publications" class="page-section">
+        <section class="publications">
+            <div class="container">
+                <h2 class="section-title">Publications & Research</h2>
+                
+                <div class="publication-item">
+                    <h3 class="publication-title">TBD</h3>
+                    <p class="publication-authors"></p>
+                    <p class="publication-journal"></p>
+                </div>                
+                
+                <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: #1a1a1a;">Conference Presentations</h3>
+                
+                <div class="publication-item">
+                    <h3 class="publication-title">TBD</h3>
+                    <p class="publication-authors"></p>
+                    <p class="publication-journal"></p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3 class="publication-title">TBD</h3>
+                    <p class="publication-authors"></p>
+                    <p class="publication-journal"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DragonflyPol</h3>
+                    <p>wide-field optical polarimetry observatory</p>
+                    <p style="margin-top: 1rem;">An international collaboration advancing our understanding of the polarized universe</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Principal Investigators</h3>
+                    <p>Mehrnoosh Tahani - University of South Carolina</p>
+                    <p>Leo Hollberg - Stanford University</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: mtahani@stanford.edu</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DragonflyPol Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
