@@ -118,6 +118,7 @@ nav {
     margin-bottom: 1rem;
     line-height: 1.1;
     color: #0a0a0a;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); 
 }
 
 .hero-subtitle {
@@ -125,6 +126,7 @@ nav {
     margin-bottom: 1.5rem;
     color: #333;
     font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .highlight {
@@ -142,6 +144,7 @@ nav {
     margin-bottom: 2rem;
     line-height: 1.6;
     max-width: 90%;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); 
 }
 
 .hero-buttons {
