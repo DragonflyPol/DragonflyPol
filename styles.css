@@ -85,13 +85,13 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
-    max-height: 700px;
+    min-height: 60vh;
+    max-height: none;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 6rem 0 4rem 0;
 }
 
 .hero::before {
@@ -108,7 +108,7 @@ nav {
 .hero-content {
     flex: 1;
     max-width: 550px;
-    padding: 4rem 2rem 4rem 5%;
+    padding: 2rem 2rem 2rem 5%;
     z-index: 2;
 }
 
@@ -205,7 +205,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: left center;
 }
 
 .polarization-demo::before {
@@ -633,8 +633,8 @@ footer {
 @media (max-width: 1260px) {
     .hero {
         flex-direction: column;
-        height: auto;
-        min-height: 100vh;
+        min-height: auto;
+        padding: 6rem 2rem 4rem 2rem;
         background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #f1f8ff 100%);
     }
     
@@ -694,4 +694,27 @@ button:focus,
 a:focus {
     outline: 2px solid #0066cc;
     outline-offset: 2px;
+}
+
+.science-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.science-image:hover {
+    transform: scale(1.05);
+}
+
+/* Update the science-icon container */
+.science-icon {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
 }
