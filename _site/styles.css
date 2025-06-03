@@ -85,13 +85,13 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
-    max-height: 700px;
+    min-height: 60vh;
+    max-height: none;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 6rem 0 4rem 0;
 }
 
 .hero::before {
@@ -108,7 +108,7 @@ nav {
 .hero-content {
     flex: 1;
     max-width: 550px;
-    padding: 4rem 2rem 4rem 5%;
+    padding: 2rem 2rem 2rem 5%;
     z-index: 2;
 }
 
@@ -118,6 +118,7 @@ nav {
     margin-bottom: 1rem;
     line-height: 1.1;
     color: #0a0a0a;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); 
 }
 
 .hero-subtitle {
@@ -125,6 +126,7 @@ nav {
     margin-bottom: 1.5rem;
     color: #333;
     font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .highlight {
@@ -142,12 +144,15 @@ nav {
     margin-bottom: 2rem;
     line-height: 1.6;
     max-width: 90%;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); 
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
 }
 
 .btn-primary, .btn-secondary {
@@ -200,12 +205,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-}
-
-.hero-buttons {
-    position: relative;
-    z-index: 3;
+    object-position: left center;
 }
 
 .polarization-demo::before {
@@ -389,12 +389,15 @@ nav {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
 .team-member {
+    flex: 0 0 280px;
+    max-width: 280px;
     background: white;
     padding: 2rem;
     border-radius: 12px;
@@ -626,20 +629,44 @@ footer {
     color: #999;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
+/* Responsive Design - Combined and cleaned up */
+@media (max-width: 1260px) {
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding: 6rem 2rem 4rem 2rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #f1f8ff 100%);
+    }
+    
+    .hero::before {
         display: none;
     }
     
-    .hero {
-        flex-direction: column;
-        text-align: center;
+    .hero-content {
+        order: 1;
         padding: 2rem;
+        max-width: 100%;
+        text-align: center;
     }
     
     .hero-visual {
+        order: 2;
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 50vh;
         margin-top: 2rem;
+    }
+    
+    .lab-photo {
+        border-radius: 12px;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
     
     .about-grid {
@@ -669,3 +696,28 @@ a:focus {
     outline-offset: 2px;
 }
 
+.science-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.science-image:hover {
+    transform: scale(1.05);
+}
+
+.science-icon {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

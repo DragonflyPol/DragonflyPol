@@ -698,7 +698,7 @@ a:focus {
 
 .science-image {
     width: 100%;
-    height: 120px;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
@@ -711,10 +711,13 @@ a:focus {
     transform: scale(1.05);
 }
 
-/* Update the science-icon container */
 .science-icon {
     width: 100%;
+    height: 150px;
     margin-bottom: 1rem;
     overflow: hidden;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
