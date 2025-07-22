@@ -808,3 +808,58 @@ a:focus {
     font-size: 0.9rem;
     margin: 0;
 }
+
+/* Sponsors Section */
+.sponsors {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.sponsors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-item {
+    transition: transform 0.3s ease;
+}
+
+.sponsor-item:hover {
+    transform: translateY(-5px);
+}
+
+.primary-sponsor .sponsor-logo {
+    height: 120px;
+    width: auto;
+}
+
+.sponsor-logo {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%);
+}
+
+.sponsor-link {
+    display: block;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .sponsors-grid {
+        gap: 2rem;
+    }
+    
+    .primary-sponsor .sponsor-logo,
+    .sponsor-logo {
+        height: 50px;
+    }
+}
