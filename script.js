@@ -57,11 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Intersection Observer for animations
+    // Use a generous rootMargin so elements start animating BEFORE they enter the viewport
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px 100px 0px'
     };
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -70,40 +71,43 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
-    // Observe all sections for animation
+
+    // Observe all sections for animation (faster transition)
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         observer.observe(section);
     });
-    
-    // Animate science cards on scroll
+
+    // Animate science cards on scroll (cap stagger at 0.05s)
     const scienceCards = document.querySelectorAll('.science-card');
     scienceCards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        card.style.transform = 'translateY(20px)';
+        const delay = Math.min(index * 0.05, 0.15);
+        card.style.transition = `opacity 0.4s ease ${delay}s, transform 0.4s ease ${delay}s`;
         observer.observe(card);
     });
-    
-    // Animate team members
+
+    // Animate team members (cap stagger so later members don't wait forever)
     const teamMembers = document.querySelectorAll('.team-member');
     teamMembers.forEach((member, index) => {
         member.style.opacity = '0';
-        member.style.transform = 'translateY(30px)';
-        member.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        member.style.transform = 'translateY(20px)';
+        const delay = Math.min(index * 0.04, 0.2);
+        member.style.transition = `opacity 0.35s ease ${delay}s, transform 0.35s ease ${delay}s`;
         observer.observe(member);
     });
-    
-    // Animate accomplishment cards
+
+    // Animate accomplishment cards (cap stagger)
     const accomplishmentCards = document.querySelectorAll('.accomplishment-card');
     accomplishmentCards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        card.style.transform = 'translateY(20px)';
+        const delay = Math.min(index * 0.05, 0.2);
+        card.style.transition = `opacity 0.4s ease ${delay}s, transform 0.4s ease ${delay}s`;
         observer.observe(card);
     });
     
@@ -231,24 +235,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     animateStats();
     
-    // Parallax effect for hero section
+    // Parallax effect for hero section (throttled with requestAnimationFrame)
     function parallaxEffect() {
         const hero = document.querySelector('.hero');
         const heroContent = document.querySelector('.hero-content');
         const heroVisual = document.querySelector('.hero-visual');
-        
+        let ticking = false;
+
         window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroHeight = hero.offsetHeight;
-            
-            if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.5;
-                heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-                heroVisual.style.transform = `translateY(${scrolled * parallaxSpeed * 0.8}px)`;
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const scrolled = window.pageYOffset;
+                    const heroHeight = hero.offsetHeight;
+
+                    if (scrolled < heroHeight) {
+                        const parallaxSpeed = 0.5;
+                        heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+                        heroVisual.style.transform = `translateY(${scrolled * parallaxSpeed * 0.8}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
     }
-    
+
     parallaxEffect();
     
     // Initialize with home page
@@ -258,13 +269,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Add smooth reveal animation for elements
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.tech-feature, .about-content, .footer-section');
-    
+
     reveals.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     });
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -272,8 +283,8 @@ function revealOnScroll() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.1 });
-    
+    }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
+
     reveals.forEach(element => observer.observe(element));
 }
 
