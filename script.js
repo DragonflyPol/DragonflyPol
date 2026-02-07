@@ -56,60 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Intersection Observer for animations
-    // Use a generous rootMargin so elements start animating BEFORE they enter the viewport
-    const observerOptions = {
-        threshold: 0.05,
-        rootMargin: '0px 0px 100px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all sections for animation (faster transition)
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        observer.observe(section);
-    });
-
-    // Animate science cards on scroll (cap stagger at 0.05s)
-    const scienceCards = document.querySelectorAll('.science-card');
-    scienceCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        const delay = Math.min(index * 0.05, 0.15);
-        card.style.transition = `opacity 0.4s ease ${delay}s, transform 0.4s ease ${delay}s`;
-        observer.observe(card);
-    });
-
-    // Animate team members (cap stagger so later members don't wait forever)
-    const teamMembers = document.querySelectorAll('.team-member');
-    teamMembers.forEach((member, index) => {
-        member.style.opacity = '0';
-        member.style.transform = 'translateY(20px)';
-        const delay = Math.min(index * 0.04, 0.2);
-        member.style.transition = `opacity 0.35s ease ${delay}s, transform 0.35s ease ${delay}s`;
-        observer.observe(member);
-    });
-
-    // Animate accomplishment cards (cap stagger)
-    const accomplishmentCards = document.querySelectorAll('.accomplishment-card');
-    accomplishmentCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        const delay = Math.min(index * 0.05, 0.2);
-        card.style.transition = `opacity 0.4s ease ${delay}s, transform 0.4s ease ${delay}s`;
-        observer.observe(card);
-    });
+    // Stats counter animation (only animates numbers, not visibility)
+    // All sections, cards, and team members are always visible — no fade-in animations
     
     // Button click animations
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
@@ -266,27 +214,4 @@ document.addEventListener('DOMContentLoaded', function() {
     showPage('home');
 });
 
-// Add smooth reveal animation for elements
-function revealOnScroll() {
-    const reveals = document.querySelectorAll('.tech-feature, .about-content, .footer-section');
-
-    reveals.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-    });
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
-
-    reveals.forEach(element => observer.observe(element));
-}
-
-// Call reveal animation after DOM content is loaded
-document.addEventListener('DOMContentLoaded', revealOnScroll);
+// All content is immediately visible — no scroll-reveal animations

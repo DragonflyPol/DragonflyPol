@@ -698,26 +698,168 @@ a:focus {
 
 .science-image {
     width: 100%;
-    height: 150px;
+    max-width: 100%;
+    height: 200px;
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
-    margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .science-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .science-icon {
     width: 100%;
-    height: 150px;
-    margin-bottom: 1rem;
+    height: 200px;
+    margin-bottom: 1.5rem;
     overflow: hidden;
     border-radius: 8px;
+    display: block;
+}
+
+/* Code of Conduct Page */
+.conduct-info {
+    padding: 3rem 0 5rem 0;
+    background: #f8f9fa;
+}
+
+.conduct-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.conduct-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+}
+
+.conduct-text h3 {
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+.conduct-text h3:first-child {
+    margin-top: 0;
+}
+
+.conduct-text p {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.conduct-list {
+    color: #444;
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem 1.5rem;
+    line-height: 1.7;
+}
+
+.conduct-list li {
+    margin-bottom: 0.5rem;
+}
+
+.conduct-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.conduct-link:hover {
+    border-bottom-color: #0066cc;
+}
+
+.conduct-closing {
+    color: #444;
+    font-size: 1.1rem;
+    margin: 2rem 0 1.5rem 0;
+    text-align: justify;
+}
+
+.conduct-contact {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.acknowledgments {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+    margin-top: 1rem;
+}
+
+.acknowledgments p {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Sponsors Section */
+.sponsors {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.sponsors-grid {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-item {
+    transition: transform 0.3s ease;
+}
+
+.sponsor-item:hover {
+    transform: translateY(-5px);
+}
+
+.primary-sponsor .sponsor-logo {
+    height: 120px;
+    width: auto;
+}
+
+.sponsor-logo {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%);
+}
+
+.sponsor-link {
+    display: block;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .sponsors-grid {
+        gap: 2rem;
+    }
+    
+    .primary-sponsor .sponsor-logo,
+    .sponsor-logo {
+        height: 50px;
+    }
 }
